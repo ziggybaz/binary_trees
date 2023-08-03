@@ -8,18 +8,18 @@
 
 int binary_tree_is_full(const binary_tree_t *tree)
 {
-	int kushoto, kulia;
+	int right, left;
 
 	if (tree == NULL)
 		return (0);
 
-	if (tree->kushoto == NULL && tree->kulia == NULL)
+	if (tree->right == NULL && tree->left == NULL)
 		return (1);
 
-	kushoto = binary_tree_is_full(tree->kushoto);
-	kulia = binary_tree_is_full(tree->kulia);
+	right = binary_tree_is_full(tree->right);
+	left = binary_tree_is_full(tree->left);
 
-	if (kushoto == 0 || kulia == 0)
+	if (right == 0 || left == 0)
 		return (0);
 
 	return (1);
